@@ -13,8 +13,8 @@ namespace EntityFrameworkDemo.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source=pizza_app.db")
-                .LogTo(Console.WriteLine, LogLevel.Information);
+            optionsBuilder.UseSqlite(
+                @"Data Source=D:\development\EntityFrameworkDemo\EntityFrameworkDemo\pizza_app.db");
         }
 
     }

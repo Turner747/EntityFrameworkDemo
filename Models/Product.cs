@@ -6,7 +6,7 @@ namespace EntityFrameworkDemo.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        [Column(TypeName = "decimal(6,2)")]
+        [Column(TypeName = "REAL(6,2)")]
         public decimal Price { get; set; }
     }
 }
