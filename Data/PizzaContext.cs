@@ -1,6 +1,5 @@
 ﻿using EntityFrameworkDemo.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace EntityFrameworkDemo.Data
 {
@@ -16,6 +15,6 @@ namespace EntityFrameworkDemo.Data
             optionsBuilder.UseSqlite(
                 @"Data Source=D:\development\EntityFrameworkDemo\EntityFrameworkDemo\pizza_app.db");
         }
-
+        
     }
 }
