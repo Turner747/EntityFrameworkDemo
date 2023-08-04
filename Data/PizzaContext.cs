@@ -5,10 +5,10 @@ namespace EntityFrameworkDemo.Data
 {
     public class PizzaContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
+        internal DbSet<Product> Products { get; set; }
+        internal DbSet<Customer> Customers { get; set; }
+        internal DbSet<Order> Orders { get; set; }
+        internal DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

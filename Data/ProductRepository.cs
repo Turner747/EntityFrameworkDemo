@@ -1,13 +1,7 @@
 ﻿using EntityFrameworkDemo.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EntityFrameworkDemo.Data;
 using EntityFrameworkDemo.Models;
 
-namespace EntityFrameworkDemo.Repositories
+namespace EntityFrameworkDemo.Data
 {
     public class ProductRepository : IProductRepository
     {

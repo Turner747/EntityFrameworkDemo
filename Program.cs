@@ -1,14 +1,48 @@
 ﻿using EntityFrameworkDemo.Data;
 using EntityFrameworkDemo.Models;
-using EntityFrameworkDemo.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 using PizzaContext context = new();
 
 //RemoveData(context);
 
-AddData(context);
+AddOrder(context);
 
+
+static void AddOrder(PizzaContext context)
+{
+    var orderRepo = new OrderRepository(context);
+    var productRepo = new ProductRepository(context);
+    var customerRepo = new CustomerRepository(context);
+
+    var john = new Customer
+    {
+        FirstName = "John",
+        LastName = "Doe",
+        Address = "123 Main",
+        Phone = "555-555-5555",
+        Email = "john@email.com"
+    };
+    customerRepo.AddCustomer(john);
+
+    var pepperoni = productRepo.Products
+                                .Where(p => p.Name == "Pepperoni")?
+                                .FirstOrDefault();
+
+    var order = new Order
+    {
+        Customer = john,
+        OrderDetails = new List<OrderDetail>()
+        {
+            new OrderDetail
+            {
+                Product = pepperoni,
+                Quantity = 2
+            }
+        },
+        OrderPlaced = DateTime.Now
+    };
+    orderRepo.AddOrder(order);
+}
 
 static void AddData(PizzaContext context)
 {
