@@ -27,5 +27,10 @@ namespace EntityFrameworkDemo.Data
             
             _context.SaveChanges();
         }
+
+        public void SaveOrder(Order o)
+        {
+            _context.SaveChanges();
+        }
     }
 }

@@ -5,8 +5,17 @@ using PizzaContext context = new();
 
 //RemoveData(context);
 
-AddOrder(context);
+deliveryOrder(context);
 
+static void deliveryOrder(PizzaContext context)
+{
+    var or = new OrderRepository(context);
+    var order = or.Orders.Where(o => o.Id == 1)?.First();
+
+    order.OrderFulfilled = DateTime.Now;
+
+    or.SaveOrder(order);
+}
 
 static void AddOrder(PizzaContext context)
 {

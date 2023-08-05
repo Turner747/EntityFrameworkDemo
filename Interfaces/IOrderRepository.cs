@@ -7,5 +7,6 @@ namespace EntityFrameworkDemo.Interfaces
         IQueryable<Order> Orders { get; }
 
         void AddOrder(Order o);
+        void SaveOrder(Order o);
     }
 }
