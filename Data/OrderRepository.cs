@@ -18,18 +18,13 @@ namespace EntityFrameworkDemo.Data
             .Include(o => o.OrderDetails)
             .ThenInclude(d => d.Product);
         
-        public void AddOrder(Order o)
+        public void SaveOrder(Order o)
         {
             _context.AttachRange(o.OrderDetails.Select(d => d.Product));
             
             if (o.Id == 0)
                 _context.Add(o);
             
-            _context.SaveChanges();
-        }
-
-        public void SaveOrder(Order o)
-        {
             _context.SaveChanges();
         }
     }

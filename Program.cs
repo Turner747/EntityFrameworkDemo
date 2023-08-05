@@ -3,8 +3,6 @@ using EntityFrameworkDemo.Models;
 
 using PizzaContext context = new();
 
-//RemoveData(context);
-
 deliveryOrder(context);
 
 static void deliveryOrder(PizzaContext context)
@@ -50,7 +48,7 @@ static void AddOrder(PizzaContext context)
         },
         OrderPlaced = DateTime.Now
     };
-    orderRepo.AddOrder(order);
+    orderRepo.SaveOrder(order);
 }
 
 static void AddData(PizzaContext context)
